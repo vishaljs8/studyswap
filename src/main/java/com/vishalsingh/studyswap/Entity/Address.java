@@ -9,5 +9,5 @@ public class Address {
 
     private String city;
     @Id
-    private ObjectId id;
+    private String id;
 }

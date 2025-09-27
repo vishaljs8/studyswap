@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Document(collection = "booking")
 public class BookingEntity{
     @Id
-    private ObjectId id;
+    private String id;
     private String borrowerName;
     private String ownerName;
     private String productId;

@@ -19,7 +19,7 @@ import java.util.List;
 public class UserEntity {
 
     @Id
-    private ObjectId id;
+    private String id;
     @NonNull
     @Indexed(unique = true)
     private String username;
