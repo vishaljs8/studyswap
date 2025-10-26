@@ -74,8 +74,8 @@ public class BookingService {
 
     }
 
-    public void acceptReqs(String bookingID,String productId) {
-        BookingEntity booking = bookingRepository.findById(bookingID)
+    public BookingEntity acceptReqs(String bookingId,String productId) {
+        BookingEntity booking = bookingRepository.findById(bookingId)
                 .orElseThrow(()-> new RuntimeException("Booking not found for accept"));
         ProductEntity product = productRepository.findById(productId)
                 .orElseThrow(()-> new RuntimeException("product not found for accept"));
@@ -84,13 +84,14 @@ public class BookingService {
         product.setStatus("BOOKED");
         bookingRepository.save(booking);
         productRepository.save(product);
+        return booking;
 
     }
 
 
-    public BookingEntity rejectReqs(String bookingID) {
-        BookingEntity booking = bookingRepository.findById(bookingID)
-                .orElseThrow(()-> new RuntimeException("Booking not found for accept"));
+    public BookingEntity rejectReqs(String bookingId) {
+        BookingEntity booking = bookingRepository.findById(bookingId)
+                .orElseThrow(()-> new RuntimeException("Booking not found for reject"));
         booking.setStatus("REJECTED");
         return bookingRepository.save(booking);
     }

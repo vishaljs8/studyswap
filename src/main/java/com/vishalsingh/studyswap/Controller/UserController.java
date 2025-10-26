@@ -22,14 +22,6 @@ public class UserController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping("/create-us")
-    public void saveUser(@RequestBody UserPojo pojo){
-        UserEntity user = new UserEntity();
-        user.setPassword(pojo.getPassword());
-        user.setUsername(pojo.getUsername());
-
-         userService.saveUser(user);
-    }
 
     @PostMapping("/create-prd")
     public ResponseEntity<ProductEntity> saveProduct(@RequestBody ProductPojo pojo, Authentication authentication ){
@@ -48,8 +40,9 @@ public class UserController {
     }
 
 
-    @GetMapping("/own-product/{username}")
-    public List<ProductEntity> getProduct(@PathVariable String username){
+    @GetMapping("/own-product")
+    public List<ProductEntity> getProduct( Authentication authentication ){
+        String username = authentication.getName();
         return userService.getProductEntities(username);
     }
 }

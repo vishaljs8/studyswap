@@ -18,7 +18,7 @@ public class ProductService {
     @Autowired
     private UserService userService;
 
-    public  List<ProductEntity> getEntity() {
+    public  List<ProductEntity> getAll() {
         return productRepository.findAll();
     }
 

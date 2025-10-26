@@ -33,6 +33,7 @@ public class UserService {
 
     public List<ProductEntity> getProductEntities(String username) {
         UserEntity user= userRepository.findByUsername(username);
+        System.out.println(user);
         return user.getProductEntities();
     }
 }
