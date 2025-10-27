@@ -34,6 +34,7 @@ public class BookingService {
         booking.setProductId(productId);
         booking.setBorrowerName(borrowerName);
         booking.setOwnerName(product.getOwnerName());
+        booking.setProductName(product.getProductName());
         booking.setType("BORROW");
         booking.setStatus("REQUESTED");
         booking.setStartDate(LocalDateTime.now());
@@ -66,11 +67,7 @@ public class BookingService {
     public List<BookingEntity> findByOwnerNameAndStatus(String ownerName) {
         List<BookingEntity> booked = bookingRepository.findByOwnerNameAndStatus(ownerName,"REQUESTED");
 
-        if(booked.isEmpty()){
-            throw new RuntimeException("BOOKING REQUEST not found");
-        }
-
-            return booked;
+           return booked;
 
     }
 

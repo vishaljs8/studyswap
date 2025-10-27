@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 public class BookingEntity{
     @Id
     private String id;
+    private String productName;
     private String borrowerName;
     private String ownerName;
     private String productId;

@@ -13,8 +13,9 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // all endpoints
-                        .allowedOrigins("https://kart-wxpg.onrender.com") // your frontend
+                registry.addMapping("/**")
+                        .allowedOrigins("https://kart-wxpg.onrender.com")
+                        .allowedOrigins("http://localhost:5173")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("Authorization", "Content-Type", "Accept")
                         .allowCredentials(true); 

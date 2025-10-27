@@ -28,7 +28,6 @@ public class BookingController {
 
     @PostMapping("/return/{bookingId}")
     public BookingEntity returnProduct(@PathVariable String bookingId){
-        System.out.println(bookingId);
          return bookingService.returnProduct(bookingId);
     }
 
