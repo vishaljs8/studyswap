@@ -119,7 +119,7 @@ public class AuthController {
                 }
                 String jwtToken = jwtUtil.generateToken(email);
                 return ResponseEntity.status(HttpStatus.FOUND)
-                        .header("Location", "https://kart-wxpg.onrendor.com/Public?token=" + jwtToken)
+                        .header("Location", "https://kart-wxpg.onrender.com/Public?token=" + jwtToken)
                         .build();
 //                return ResponseEntity.status(HttpStatus.FOUND)
 //                        .header("Location", "http://localhost:5173/Public?token=" + jwtToken)
