@@ -8,4 +8,5 @@ import lombok.Data;
 public class UserPojo {
     private String username;
     private String password;
+    private String email;
 }

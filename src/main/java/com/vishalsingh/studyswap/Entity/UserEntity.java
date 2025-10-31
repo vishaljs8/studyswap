@@ -25,7 +25,7 @@ public class UserEntity {
     private String username;
     @NonNull
     private String password;
-
+    private String email;
     @DBRef
     private List<ProductEntity> productEntities = new ArrayList<>();
     @DBRef
